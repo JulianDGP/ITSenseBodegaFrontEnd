@@ -1,0 +1,37 @@
+{{productos | json}}
+
+<table class="table table-dark">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Cantidad</th>
+        <th scope="col">Defectos</th>
+        <th scope="col">DisponibilidadStock</th>
+        <th scope="col">Elaboracion</th>
+        <th scope="col">FechaIngreso</th>
+        <th scope="col">FechaRetiro</th>
+
+        <th scope="col">VER</th>
+        <th scope="col">EDITAR</th>
+        <th scope="col">BORRAR</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let producto of productos">
+        <td>{{producto.id}}</td>
+        <td>{{producto.nombre}}</td>
+        <td>{{producto.cantidad}}</td>
+        <td>{{producto.defectos}}</td>
+        <td>{{producto.disponibilidadStock}}</td>
+        <td>{{producto.elaboracion}}€</td>
+        <td>{{producto.fechaIngreso}}</td>
+        <td>{{producto.fechaRetiro}}€</td>
+
+        <td><button class="btn btn-outline-primary" routerLink="/detalle/{{producto.id}}"><i class="far fa-eye"></i> Ver</button></td>
+        <!-- (click)="editar(producto.id)"  -->
+        <td><button class="btn btn-outline-warning" routerLink="/editar/{{producto.id}}"><i class="fa-solid fa-dolly"></i> Editar</button></td>
+        <!-- <td><button class="btn btn-outline-danger" (click)="borrar(producto.id)"><i class="far fa-trash-alt"></i> Eliminar</button></td> -->
+      </tr>
+    </tbody>
+  </table>

@@ -1,0 +1,32 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+    <a class="navbar-brand" href="#">Bodega ITSense</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/"><i class="fas fa-home"></i> Inicio</a>
+          </li>
+        <li class="nav-item" *ngIf="isLogged">
+          <a class="nav-link" routerLink="/lista"><i class="far fa-list-alt"></i> Lista</a>
+        </li>
+        <li class="nav-item" *ngIf="isLogged">
+          <a class="nav-link"  routerLink="/nuevo"><i class="fas fa-plus-circle"></i> Ingresar Producto</a>
+        </li>
+        <li class="nav-item"*ngIf="isLogged">
+          <a class="nav-link"  routerLink="/nuevo"><i class="fa-solid fa-dolly"></i>Retirar Producto</a>
+        </li>
+      </ul>
+
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"*ngIf="!isLogged">
+          <a class="nav-link"  routerLink="/login"><i class="fa-solid fa-right-to-bracket"></i>Iniciar Sesion</a>
+        </li>
+        <li class="nav-item"*ngIf="isLogged" (click)="onLogOut()">
+          <a class="nav-link"  routerLink="/nuevo" > <i class="fa-solid fa-right-from-bracket"></i>Cerrrar Sesion</a>
+        </li>
+        
+      </ul>
+    </div>
+  </nav>
