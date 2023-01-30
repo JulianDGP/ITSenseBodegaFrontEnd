@@ -30,8 +30,8 @@ export class ProductoService {
     return this.httpClient.put<any>(this.productoURL+ `update/${id}`, producto)
   } 
 
-public delete(id: Number): Observable<any>{
-  return this.httpClient.delete<any>(this.productoURL+`editar/${id}`)
+public delete(id?: Number): Observable<any>{
+  return this.httpClient.delete<any>(this.productoURL+ `borrar/${id}`)
 }
 
 }

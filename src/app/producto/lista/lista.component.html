@@ -1,4 +1,5 @@
-{{productos | json}}
+<button class="btn btn-outline-success btn-block" (click)="cargarProductosStock()" >Solo productos en Stock</button>
+<button class="btn btn-outline-success btn-block" (click)="cargarProductosSinStock()" >Sin Stock</button>
 
 <table class="table table-dark">
     <thead>
@@ -13,7 +14,8 @@
         <th scope="col">FechaRetiro</th>
 
         <th scope="col">VER</th>
-        <th scope="col">EDITAR</th>
+        <th scope="col">VER</th>
+        <th scope="col">Retirar</th>
         <th scope="col">BORRAR</th>
       </tr>
     </thead>
@@ -24,14 +26,15 @@
         <td>{{producto.cantidad}}</td>
         <td>{{producto.defectos}}</td>
         <td>{{producto.disponibilidadStock}}</td>
-        <td>{{producto.elaboracion}}€</td>
+        <td>{{producto.elaboracion}}</td>
         <td>{{producto.fechaIngreso}}</td>
-        <td>{{producto.fechaRetiro}}€</td>
+        <td>{{producto.fechaRetiro}}</td>
 
         <td><button class="btn btn-outline-primary" routerLink="/detalle/{{producto.id}}"><i class="far fa-eye"></i> Ver</button></td>
+        <td><button class="btn btn-outline-primary" routerLink="/detalle/{{producto.id}}"><i class="far fa-eye"></i> Ver</button></td>
         <!-- (click)="editar(producto.id)"  -->
-        <td><button class="btn btn-outline-warning" routerLink="/editar/{{producto.id}}"><i class="fa-solid fa-dolly"></i> Editar</button></td>
-        <!-- <td><button class="btn btn-outline-danger" (click)="borrar(producto.id)"><i class="far fa-trash-alt"></i> Eliminar</button></td> -->
+        <td><button class="btn btn-outline-warning" routerLink="/editar/{{producto.id}}"><i class="fa-solid fa-dolly"></i> Retirar</button></td>
+        <td><button class="btn btn-outline-danger"(click)="borrar(producto.id)"  ><i class="far fa-trash-alt"></i> Eliminar</button></td> 
       </tr>
     </tbody>
   </table>
