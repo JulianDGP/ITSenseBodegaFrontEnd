@@ -40,20 +40,8 @@ constructor(private productoService: ProductoService,  private toastr: ToastrSer
     )
   }
 
-  cargarProductosStock():void{
-    this.productoService.stock(true).subscribe(
-      data =>{
-        this.productos = data;
-      },
-      err =>{
-        console.log(err)
-      } 
-
-    )
-  }
-
-  cargarProductosSinStock():void{
-    this.productoService.stock(false).subscribe(
+  cargarProductosStock(valor:Boolean):void{
+    this.productoService.stock(valor).subscribe(
       data =>{
         this.productos = data;
       },

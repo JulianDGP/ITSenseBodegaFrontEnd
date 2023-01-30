@@ -7,7 +7,7 @@
             <div class="card-header">
                 <ul class="nav nav-tabs">
                     <li class="nav-item">
-                      <a class="nav-link active" routerLink="/">Iniciar Sesión</a>
+                      <a class="nav-link active" routerLink="/login">Iniciar Sesión</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" routerLink="/registro">Crear Cuenta</a>
@@ -18,7 +18,7 @@
             <div class="card-body">
                 <form #f="ngForm"(ngSubmit)="onLogin()" novalidate>
                     <div class="form-group">
-                        <label for="nombreUsuario">NombreUsuario</label>
+                        <label for="nombreUsuario">Nombre Usuario</label>
                         <input type="text" name="nombreUsuario" id="nombreUsuario" class="form-control"
                         [(ngModel)]="nombreUsuario" required>
                     </div>

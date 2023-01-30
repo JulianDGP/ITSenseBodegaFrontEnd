@@ -43,7 +43,6 @@ export class LoginComponent implements OnInit{
         this.tokenService.setUserName(data.nombreUsuario!);
         this.tokenService.setAuthorities(data.authorities!);
         this.roles = data.authorities!;
-        this.router.navigate(['/']);
         window.location.reload();
         this.toastr.success('Bienvenido ' + data.nombreUsuario, 'OK', {
           timeOut: 5000, positionClass: 'toast-top-center'

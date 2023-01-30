@@ -23,4 +23,6 @@ constructor(private tokenService: TokenService){
     this.tokenService.logOut();
     window.location.reload();
   }
+
+
 }
