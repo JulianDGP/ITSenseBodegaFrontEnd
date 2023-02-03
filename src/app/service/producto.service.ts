@@ -27,7 +27,7 @@ export class ProductoService {
     return this.httpClient.post<any>(this.productoURL+ 'crear', producto)
   } 
   public update(id:Number, producto:Producto):Observable<any>{
-    return this.httpClient.put<any>(this.productoURL+ `update/${id}`, producto)
+    return this.httpClient.put<any>(this.productoURL+ `editar/${id}`, producto)
   } 
 
 public delete(id?: Number): Observable<any>{
