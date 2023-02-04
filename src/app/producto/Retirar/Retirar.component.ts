@@ -6,14 +6,16 @@ import { ProductoService } from 'src/app/service/producto.service';
 
 @Component({
   selector: 'app-editar',
-  templateUrl: './editar.component.html',
-  styleUrls: ['./editar.component.css']
+  templateUrl: './Retirar.component.html',
+  styleUrls: ['./Retirar.component.css']
 })
 export class EditarComponent implements OnInit {
   productoAMano: string= "Elaborado a mano";
   productoAMaquina: string= "Elaborado a maquina";
   producto!: Producto;
   cantidadBandera?: number;
+  cantidadMuestra?: number;
+
 
   constructor(private productoService: ProductoService,
      private activatedRoute: ActivatedRoute,
@@ -27,6 +29,7 @@ export class EditarComponent implements OnInit {
     data =>{
     this.producto = data;
     this.cantidadBandera = this.producto.cantidad;
+      this.cantidadMuestra = this.cantidadBandera;
     
     console.log(typeof(this.cantidadBandera))
     console.log(typeof(this.producto.cantidad));
@@ -42,7 +45,8 @@ export class EditarComponent implements OnInit {
   }
 
 
-  onUpdate():void{
+  onUpdate():void{ 
+    if( Number(this.cantidadBandera) >0){
       this.producto.cantidad -= Number(this.cantidadBandera);
       if(this.producto.cantidad >=1){
           this.producto.disponibilidadStock=true;
@@ -73,8 +77,11 @@ export class EditarComponent implements OnInit {
       }else{
         this.toastr.error("Esta intentando retirar mas productos de los que hay");
       }
-      
-      
+    }else{
+      this.toastr.error("Intento retirar 0 productos ó una cantidad negativa de productos");
+
+    }
+     
     }
   }
 

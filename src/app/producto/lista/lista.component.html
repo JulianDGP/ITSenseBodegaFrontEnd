@@ -11,13 +11,13 @@
         <th scope="col">Defectos</th>
         <th scope="col">DisponibilidadStock</th>
         <th scope="col">Elaboracion</th>
-        <th scope="col">FechaIngreso</th>
-        <th scope="col">FechaRetiro</th>
+        <th scope="col">Ultima Fecha Ingreso</th>
+        <th scope="col">Ultima Fecha Retiro</th>
 
-        <th scope="col">VER</th>
-        <th scope="col">VER</th>
+        <th scope="col">Ingresar</th>
+        <!-- <th scope="col">VER</th> -->
         <th scope="col">Retirar</th>
-        <th scope="col">BORRAR</th>
+        <!-- <th scope="col">BORRAR</th> -->
       </tr>
     </thead>
     <tbody>
@@ -31,11 +31,11 @@
         <td>{{producto.fechaIngreso}}</td>
         <td>{{producto.fechaRetiro}}</td>
 
-        <td><button class="btn btn-outline-primary" routerLink="/detalle/{{producto.id}}"><i class="far fa-eye"></i> Ver</button></td>
-        <td><button class="btn btn-outline-primary" routerLink="/detalle/{{producto.id}}"><i class="far fa-eye"></i> Ver</button></td>
+        <td><button class="btn btn-outline-success" routerLink="/detalle/{{producto.id}}"><i class="fa-solid fa-dolly"></i> Ingresar Mercancia</button></td>
+        <!-- <td><button class="btn btn-outline-primary" routerLink="/detalle/{{producto.id}}"><i class="far fa-eye"></i> Ver</button></td> -->
         <!-- (click)="editar(producto.id)"  -->
-        <td><button class="btn btn-outline-warning" routerLink="/editar/{{this.producto.id}}"><i class="fa-solid fa-dolly"></i> Retirar</button></td>
-        <td><button class="btn btn-outline-danger"(click)="borrar(producto.id)"  ><i class="far fa-trash-alt"></i> Eliminar</button></td> 
+        <td><button class="btn btn-outline-warning" routerLink="/retirar/{{this.producto.id}}"><i class="fa-solid fa-truck-fast"></i>  Retirar Mercancia</button></td>
+        <!-- <td><button class="btn btn-outline-danger"(click)="borrar(producto.id)"  ><i class="far fa-trash-alt"></i> Eliminar</button></td>  -->
       </tr>
     </tbody>
   </table>

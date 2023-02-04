@@ -11,7 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DetalleComponent } from './producto/detalle/detalle.component';
 import { NuevoComponent } from './producto/nuevo/nuevo.component';
-import { EditarComponent } from './producto/editar/editar.component';
+import { EditarComponent } from './producto/Retirar/Retirar.component';
 import { ListaComponent } from './producto/lista/lista.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';

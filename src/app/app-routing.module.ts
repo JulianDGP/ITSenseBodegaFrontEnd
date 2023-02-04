@@ -4,7 +4,7 @@ import { LoginComponent } from './auth/login/login.component';
 import { RegistroUsuariosComponent } from './auth/login/registro-usuarios.component';
 import { IndexComponent } from './index/index.component';
 import { DetalleComponent } from './producto/detalle/detalle.component';
-import { EditarComponent } from './producto/editar/editar.component';
+import { EditarComponent } from './producto/Retirar/Retirar.component';
 import { ListaComponent } from './producto/lista/lista.component';
 import { NuevoComponent } from './producto/nuevo/nuevo.component';
 
@@ -15,7 +15,7 @@ const routes: Routes = [
   {path:'lista', component: ListaComponent},
   {path: 'detalle/:id', component: DetalleComponent},
   {path: 'nuevo', component: NuevoComponent},
-  {path:'editar/:id', component: EditarComponent },
+  {path:'retirar/:id', component: EditarComponent },
   {path:'**', redirectTo: '', pathMatch: 'full'}
 ];
 
